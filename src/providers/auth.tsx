@@ -32,15 +32,14 @@ interface AuthContextProps {
 
 export function AuthProvider({ children }: AuthContextProps){
     const [user,setUser]=useState<UserType | null>(null)
-
+    // DEVERIA USAR COOKIES MAS OK
     useEffect(()=>{
-        const storagedUser=JSON.parse(localStorage.getItem("user"))
+        const storagedUser=JSON.parse(localStorage.getItem("user") || '')
         const storagedToken=localStorage.getItem("token")
         if(storagedUser&&storagedToken){
-            console.log("teste")
-        api.defaults.headers['Authorization']=`Bearer ${storagedToken}`
-            setUser(storagedUser)
-        }
+            api.defaults.headers['Authorization']=`Bearer ${storagedToken}`
+                setUser(storagedUser)
+            }
     },[])
 
     async function signIn(email: string,senha: string){
