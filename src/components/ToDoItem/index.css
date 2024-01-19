@@ -1,0 +1,86 @@
+.todo-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  position: relative;
+  background: none;
+}
+
+.todo-item h3 {
+  margin: 0 0 10px 0;
+}
+
+.todo-item p {
+  word-wrap: break-word;
+  flex-grow: 1;
+}
+
+.item-completed {
+  text-decoration: line-through;
+  /* color: #999; */
+}
+
+.todo-item .status {
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  /* color: white; */
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.edit-btn, .remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+}
+
+.remove-btn {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.pending {
+  background-color: #f0afab;
+}
+
+.in_progress {
+  background-color: #CCD6BD;
+}
+
+.completed {
+  background-color: #a4d4cc;
+}
+
+@media (max-width: 600px) {
+  .edit-btn, .remove-btn {
+    display: none;
+  }
+
+  .todo-item {
+    padding: 10px;
+  }
+
+  .todo-item h3 {
+    font-size: 1.2em;
+  }
+
+  .todo-item .status {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+  }
+  
+}
